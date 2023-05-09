@@ -1,9 +1,11 @@
 import React from "react";
 
-function CatList(props) {
+function CatList({ catPics = [] }) {
     return (
-        <div key={props.id}>
-            <img src={props.catPic} alt="cat" />
+        <div>
+            {catPics.map((pic) => (
+                <img key={pic.id} src={pic.url} alt="cat" />
+            ))}
         </div>
     );
 }
